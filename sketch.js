@@ -5,7 +5,6 @@ function setup() {
 }
 
 function draw() {
-  var framePerc = frameCount / 50;
   var boxVolume = 5;
   var offsetX = 0;
   var offsetY = 0;
@@ -16,7 +15,7 @@ function draw() {
   for(var w = -width/4; w <= width/4; w += boxVolume){
     offsetY=0;
     for(var h = -height/4; h<= height/4; h += boxVolume){
-      var noiseSurface = map(noise(offsetX + framePerc, offsetY + framePerc), 0, 1, -50, 50);
+      var noiseSurface = map(noise(offsetX, offsetY), 0, 1, -50, 50);
       
       push();
       translate(w,h,noiseSurface);
